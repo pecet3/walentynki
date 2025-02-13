@@ -3,8 +3,9 @@ import { useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { IoHeart } from "react-icons/io5";
+import { useSearchParams } from "next/navigation";
 
-function AnswerYes() {
+function AnswerYes({ name }: { name: string }) {
   return (
     <>
       <motion.div
@@ -21,7 +22,7 @@ function AnswerYes() {
       >
         <IoHeart size={128} className="text-red-600" />
         <p className="absolute top-10 left-20 italic font-bold text-2xl">
-          Wiktor
+          {name}
         </p>
         <p className="tracking-widest text-4xl">Kocham Cię</p>
       </motion.div>
@@ -31,6 +32,8 @@ function AnswerYes() {
 
 export default function Page() {
   const [answeredYes, setAnsweredYes] = useState(false);
+  const searchParams = useSearchParams();
+  const name = searchParams.get("name") || " Aga";
 
   const handleNoClick = () => {
     alert("To spadaj :(");
@@ -86,7 +89,7 @@ export default function Page() {
           </motion.div>
         </div>
       ) : (
-        <AnswerYes />
+        <AnswerYes name={name} />
       )}
     </main>
   );
