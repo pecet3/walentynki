@@ -8,8 +8,6 @@ function AnswerYes() {
   return (
     <>
       <motion.div
-        whileHover={{ scale: 1.15 }}
-        whileTap={{ scale: 1 }}
         animate={{
           scale: [1, 1.5, 1],
           transition: {
