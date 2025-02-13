@@ -41,7 +41,7 @@ function AnswerYes({ name }: { name: string }) {
 export default function Page() {
   const [answeredYes, setAnsweredYes] = useState(false);
   const searchParams = useSearchParams();
-  const name = searchParams.get("name") || " Aga";
+  const name = searchParams.get("name") || "";
 
   const handleNoClick = () => {
     alert("To spadaj :(");
@@ -99,6 +99,12 @@ export default function Page() {
       ) : (
         <AnswerYes name={name} />
       )}
+      {name != "" ? (
+        <p className="fixed bottom-0 right-0 text-xs">
+          by pecet
+          <a href="https://github.com/pecet3/walentynki"> | repo</a>
+        </p>
+      ) : null}
     </main>
   );
 }
