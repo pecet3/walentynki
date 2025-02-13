@@ -22,7 +22,9 @@ function AnswerYes() {
         className="mb-40 relative flex flex-col items-center"
       >
         <IoHeart size={128} className="text-red-600" />
-        <p className="absolute top-10 left-24 italic font-bold text-2xl">Aga</p>
+        <p className="absolute top-10 left-20 italic font-bold text-2xl">
+          Wiktor
+        </p>
         <p className="tracking-widest text-4xl">Kocham Cię</p>
       </motion.div>
     </>
