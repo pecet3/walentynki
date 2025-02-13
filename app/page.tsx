@@ -21,7 +21,15 @@ function AnswerYes({ name }: { name: string }) {
         className="mb-40 relative flex flex-col items-center"
       >
         <IoHeart size={128} className="text-red-600" />
-        <p className="absolute top-10 left-20 italic font-bold text-2xl">
+        <p
+          className={`absolute top-10 ${
+            name.length > 8
+              ? "left-16"
+              : name.length > 3
+              ? "left-22"
+              : "left-24"
+          } italic font-bold text-2xl`}
+        >
           {name}
         </p>
         <p className="tracking-widest text-4xl">Kocham Cię</p>
